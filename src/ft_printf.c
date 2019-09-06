@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-
 int ft_printf(const char *fmt, ...)
 {
 	t_all *all;
@@ -26,5 +25,4 @@ int ft_printf(const char *fmt, ...)
 	}
 	free(all); //does free work even though I malloc elsewhere?
 	return (all->size); //does this do anything after it's free?
-	
 }

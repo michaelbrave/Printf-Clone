@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize.c                                       :+:      :+:    :+:   */
+/*   initializers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,9 +19,10 @@ t_all	*initialize(char *fmt)
 		return (NULL);
 	all->string = fmt;
     all->copy = all->string;
+	all->copy2 = all->string;
     all->size = 0;
     all->i = 0;
-    all->flag_table = "scSCdDiuUoOxXbp%";
+    all->flag_table = "scSCdDiuUoOxXbp%"; //could be a macro
 	all->format_table = "-+ 0#";
 	all->arg_table = "lhjz";
 	return(all);
