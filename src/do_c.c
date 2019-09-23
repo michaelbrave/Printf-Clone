@@ -5,32 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/01 14:01:02 by mbrave            #+#    #+#             */
-/*   Updated: 2019/09/01 14:01:04 by mbrave           ###   ########.fr       */
+/*   Created: 2019/09/07 15:08:31 by mbrave            #+#    #+#             */
+/*   Updated: 2019/09/07 15:08:51 by mbrave           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//this is what handles characters
-
-t_all 	*do_c(t_all *all)
+int     do_c(t_all *all) // converts to char //gets called
 {
-    wint_t c;
+    char *str;
+    char *tmp;
 
-	if (ft_strcmp(all->arg_table, "l") == 0)
-		c = (unsigned long)va_arg(all->args, unsigned long);
-	else if (all->flag == 'C')
-		c = va_arg(all->args, wint_t);
-	else
-		c = (char)va_arg(all->args, int);
-	//c = (wint_t)c;
-	if (all->format[3] == '0' && all->format[0] != '-')
-		do_gap(all, '0', all->width_predot - 1, 1);
-	else if (all->format[0] != '-')
-		do_gap(all, ' ', all->width_predot - 1, 1);
-	do_wchar(c, all);
-	if (all->format[0] == '-')
-		do_gap(all, ' ', all->width_predot - 1, 1);
-	return (all);
+    str = NULL;
+    all->length = 2;
+    str = length(all, str, 10);
+    str = format_master(all, str);
+    tmp = all->toprint;
+    all->toprint = ft_strjoin(tmp, str);
+    //free(str);
+    //free(tmp);
+    all->size = ft_strlen(all->toprint);
+    return(0);
 }

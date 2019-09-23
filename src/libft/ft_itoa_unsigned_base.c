@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_o.c                                             :+:      :+:    :+:   */
+/*   ft_itoa_unsigned_base.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 15:09:24 by mbrave            #+#    #+#             */
-/*   Updated: 2019/09/07 15:09:27 by mbrave           ###   ########.fr       */
+/*   Created: 2019/09/13 12:09:57 by mbrave            #+#    #+#             */
+/*   Updated: 2019/09/13 12:10:01 by mbrave           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int     do_o(t_all *all) // converts to octal
+char		*ft_itoa_base(long long n, int base)
 {
-    char *str;
-    char *tmp;
+	int				arraycount;
+	char			*str;
+	char			*hexmap;
 
-    str = NULL;
-    all->length = 6; //unsigned;
-    str = length(all, str, 8);
-    str = format_master(all, str);
-    tmp = all->toprint;
-    all->toprint = ft_strjoin(tmp, str);
-    free(str);
-    free(tmp);
-    all->size = ft_strlen(all->toprint);
-
-    return(0);
+	hexmap = ft_strdup("0123456789ABCDEF");
+	if (!(base > 2 && base < 16))
+		return (NULL);
+	arraycount = ft_numplace(n, base);
+	if (!(str = (char *)ft_strnew(arraycount)))
+		return (NULL);
+	while (arraycount--)
+	{
+		str[arraycount] = hexmap[n % base];
+		n = n / base;
+	}
+	return (str);
 }

@@ -5,24 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 10:25:20 by mbrave            #+#    #+#             */
-/*   Updated: 2019/05/28 14:32:47 by mbrave           ###   ########.fr       */
+/*   Created: 2019/09/07 15:10:22 by mbrave            #+#    #+#             */
+/*   Updated: 2019/09/07 15:10:23 by mbrave           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *fmt, ...)
+int ft_printf(const char *format, ...)
 {
 	t_all *all;
-	all = initialize(fmt);
+	all = initialize((char *)format);
 
-	if (fmt)
+	if (format)
 	{
-		va_start(all->args, fmt);
-		all->size = parser(all);
+		va_start(all->args, format);
+		print_or_parse(all);
 		va_end(all->args);
 	}
-	free(all); //does free work even though I malloc elsewhere?
-	return (all->size); //does this do anything after it's free?
+	else
+		return(0);
+	cleanclean(all);
+	//free(all);
+	return (all->size);
 }

@@ -80,6 +80,7 @@ ft_tolower.c \
 ft_toupper.c \
 ft_itoa_base.c \
 ft_itoa_unsigned.c \
+ft_itoa_unsigned_base.c\
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -89,7 +90,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 $(OBJ):
-	gcc -c -Wall -Wextra -Werror -I includes $(SRC)
+	gcc -c -Wall -Wextra -Werror -g -I includes $(SRC)
 
 clean:
 	rm -f $(OBJ)

@@ -12,42 +12,38 @@
 
 #include "libft.h"
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(long long n, int base)
 {
 	int				arraycount;
 	int				neg;
-	unsigned long	tmp;
 	char			*str;
 	char			*hexmap;
 
 	neg = 0;
-    
-	hexmap = ft_strdup("0123456789ABCDEF");
-	if (base > 2 && base < 16)
+	hexmap = ft_strdup("0123456789abcdef");
+	if (n == 0)
+        {
+            str = ft_strnew(2);
+            str[0] = '0';
+            str[1] = '\0';
+			return(str);
+        }
+	if (base >= 2 && base <= 16)
 	{
-		if (n < 0)
-		{
-			tmp = n * -1;
+		if (n < 0 && (n *= -1))
 			neg = 1;
-		}
-		else
-			tmp = n;
-		arraycount = ft_numplace(tmp, base);
-		str = (char *)ft_strnew(arraycount + neg);
-		if (str == NULL)
+		arraycount = ft_numplace(n, base);
+		if (!(str = (char *)ft_strnew(arraycount + neg)))
 			return (NULL);
 		while (arraycount--)
 		{
-			str[neg + arraycount] = hexmap[tmp % base];
-			tmp = tmp / base;
+			str[neg + arraycount] = hexmap[n % base];
+			n = n / base;
 		}
 		if (neg == 1)
 			str[0] = '-';
+		free(hexmap);
 		return (str);
 	}
-	else
-	{
-		ft_putstr("Base Must Be Between 2 and 16");
-		return (NULL);
-	}
+	return(NULL);
 }

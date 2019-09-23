@@ -18,7 +18,7 @@
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char		*ft_itoa(intmax_t n)
 {
 	int				arraycount;
 	int				neg;
@@ -27,7 +27,6 @@ char		*ft_itoa(int n)
 	int 			base;
 
 	neg = 0;
-	
 	base = 10;
 	if (n < 0)
 	{

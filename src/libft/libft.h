@@ -108,7 +108,7 @@ int				ft_toupper(int c);
 /*
 ** other - Part 2
 */
-char			*ft_itoa(int n);
+char			*ft_itoa(intmax_t n);
 
 /*
 ** list (bonus)
@@ -134,8 +134,9 @@ size_t			ft_numofstrings(char const *s, char c);
 /*
 ** added or modified later for printf
 */
-char			*ft_itoa_base(int value, int base);
-int				ft_numplace(unsigned int n, int base);
-char			*ft_itoa_unsigned(unsigned int n, int base);
+char			*ft_itoa_base(long long value, int base);
+int				ft_numplace(unsigned long n, int base);
+char			*ft_itoa_unsigned(unsigned long n, int base);
+char			*ft_itoa_unsigned_base(unsigned long n, int base);
 
 #endif

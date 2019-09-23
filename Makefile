@@ -10,39 +10,58 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf
+NAME = libftprintf.a
 
-HEAD = ft_printf.h
+CC = gcc
 
-GCC = gcc
+#-Wall -Wextra -Werror /add back to cflags later
+CFLAGS = -g -I includes/ -I $(LIBFT)
 
-FLAGS = -g -Wall -Wextra -Werror
+LDFLAGS = -L. -lftprintf
 
-LIBFLAGS = -L./libft -lft
+LIBFT = ./src/libft/
 
-LIBFT = libft
+SRC = ft_printf.c \
+	initializers.c \
+	parsers.c \
+	print_or_parse.c \
+	switch_do.c \
+	do_c.c \
+	do_d.c \
+	do_o.c \
+	do_p.c \
+	do_s.c \
+	do_u.c \
+	do_x.c \
+	do_percent.c \
+	printprint.c \
+	length.c \
+	length2.c \
+	formaters.c \
+	cleanclean.c \
 
-LIB = libft.a
-
-SRC = 
-	main.c, 
-	ft_printf.c
-
-OBJ = $(SRC:.c=.o)
+OBJ = $(patsubst %.c,src/%.o,$(SRC))
 
 all: $(NAME)
 
-$(NAME):
+libft:
 	make -C $(LIBFT)
-	$(GCC) $(FLAGS) -c $(SRC) -I $(LIBFT)
-	$(GCC) -o $(NAME) $(OBJ) $(LIBFLAGS)
+
+$(NAME): libft $(OBJ)
+	@ar rcs $(NAME) $(OBJ) $(LIBFT)*.o
+
+test: all
+	$(CC) $(CFLAGS) main.c $(LDFLAGS)
 
 clean:
 	rm -f $(OBJ)
+	make -C $(LIBFT) clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C $(LIBFT) fclean
+	rm -f a.out
 
 re: fclean all
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re norm libft

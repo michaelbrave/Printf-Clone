@@ -1,4 +1,5 @@
 .vscode
 *.h.gch
-a.out
+*.out
 *.o 
+*.dSYM
