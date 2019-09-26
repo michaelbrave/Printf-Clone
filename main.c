@@ -435,9 +435,12 @@ int main()
 
     ft_printf("test p m %p\n", 24);
     printf("test p t %p\n", 24);
+
+*/
 // f tests
 
-	printf("\n*****--- f ft_printf tests ---*****\n");
+//	printf("\n*****--- f ft_printf tests ---*****\n");
+/*
     ft_printf("test f m %f\n", 24.0024);
     printf("test f t %f\n", 24.0024);
 
@@ -480,7 +483,6 @@ int main()
 	ft_printf("%%f 42.42 == |%f|\n", 42.42);
 	printf("%%f 42.42 == |%f|\n", 42.42);
 */
-
 // File Checker Fails
 /*
 	printf("\n*****--- Re Broken Tests ---*****\n");
@@ -720,524 +722,43 @@ int main()
 	ft_printf("m %lu\n", 4294967296);
 	printf("t %lu\n", 4294967296);
 */
-/*
-
-	printf("\n*****--- Undefined Failed Tests ---*****\n");
-
-	ft_printf("m %%\n", "test");
-	printf("t %%\n", "test"); // undefined
-
-	ft_printf("m %   %\n", "test");
-	printf("t %   %\n", "test"); // undefined
-
-	ft_printf("%x\n", test);
-	printf("%x\n", test);
-
-	ft_printf("m %llX\n", 4294967296);
-	printf("t %llX\n", 4294967296); // undefined
-
-	ft_printf("m %hx\n", 4294967296);
-	printf("t %hx\n", 4294967296); // undefined
-
-	ft_printf("m %hhX\n", 4294967296);
-	printf("t %hhX\n", 4294967296); // undefined
-
-	ft_printf("m %llx\n", 9223372036854775807);
-	printf("t %llx\n", 9223372036854775807); // undefined
-
-	ft_printf("m %llx\n", 9223372036854775808); // undefined
-	printf("t %llx\n", 9223372036854775808); // undefined
-
-	ft_printf("m %#llx\n", 9223372036854775807);
-	printf("t %#llx\n", 9223372036854775807); // undefined
-
-	ft_printf("m %#-08x\n", 42);
-	printf("t %#-08x\n", 42); // undefined
-
-	ft_printf("m %.2c\n", NULL);
-	printf("t %.2c\n", NULL); // undefined
-
-	ft_printf("m %s %s\n", NULL, string);
-	printf("t %s %s\n", NULL, string);
-
-	ft_printf("m % c\n", 0);
-	printf("t % c\n", 0); // undefined
-
-	ft_printf("m %-05o\n", 2500);
-	printf("t %-05o\n", 2500); // undefined
-
-	ft_printf("m % +d\n", 42);
-	printf("t % +d\n", 42); // undefined
-
-	ft_printf("m %+ d\n", 42);
-	printf("t %+ d\n", 42); // undefined
-
-	ft_printf("m %  +d\n", 42);
-	printf("t %  +d\n", 42); // undefined
-
-	ft_printf("m %+  d\n", 42);
-	printf("t %+  d\n", 42); // undefined
-
-	ft_printf("m % ++d\n", 42);
-	printf("t % ++d\n", 42); // undefined
-
-	ft_printf("m %++ d\n", 42);
-	printf("t %++ d\n", 42); // undefined
-
-	ft_printf("m %-05d\n", 42);
-	printf("t %-05d\n", 42); // undefined
-
-	ft_printf("m %-05d\n", -42);
-	printf("t %-05d\n", -42); // undefined
-
-	ft_printf("m %hhd\n", 128);
-	printf("t %hhd\n", 128); // undefined
-
-	ft_printf("m %hhd\n", -129);
-	printf("t %hhd\n", -129); // undefined
-
-	ft_printf("m %lld\n", 9223372036854775807);
-	printf("t %lld\n", 9223372036854775807); // undefined
-
-	ft_printf("m %lld\n", -9223372036854775808); // undefined
-	printf("t %lld\n", -9223372036854775808); // undefined
-
-	ft_printf("m %-15u\n", 4294967295);
-	printf("t %-15u\n", 4294967295); // undefined
-
-	ft_printf("m % u\n", 4294967295);
-	printf("t % u\n", 4294967295); // undefined
-
-	ft_printf("m %+u\n", 4294967295);
-	printf("t %+u\n", 4294967295); // undefined
-
-	ft_printf("m %lu\n", -42);
-	printf("t %lu\n", -42); // undefined
-
-	ft_printf("m %llu\n", 4999999999);
-	printf("t %llu\n", 4999999999); // undefined
-*/
-/*
-	printf("\n*****--- Undefined Part 2 Failed Tests ---*****\n");
-
-	ft_printf("m %\n");
-	printf("t %\n");
-
-	ft_printf("m % \n");
-	printf("t % \n");
-
-	ft_printf("m % h\n");
-	printf("t % h\n");
-
-	ft_printf("m %Z\n");
-	printf("t %Z\n");
-
-	ft_printf("m % hZ\n");
-	printf("t % hZ\n");
-
-	ft_printf("m %05%\n");
-	printf("t %05%\n");
-
-	ft_printf("m %-05%\n");
-	printf("t %-05%\n");
-
-	ft_printf("m % hZ%\n");
-	printf("t % hZ%\n");
-
-	ft_printf("m % Z\n", "test");
-	printf("t % Z\n", "test");
-
-	ft_printf("m % Z \n", "test");
-	printf("t % Z \n", "test");
-
-	ft_printf("m % Z%s\n", "test");
-	printf("t % Z%s\n", "test");
-
-	ft_printf("m %000   %\n", "test");
-	printf("t %000   %\n", "test");
-
-	ft_printf("m %%%\n", "test");
-	printf("t %%%\n", "test");
-
-	ft_printf("m %jx\n", 4294967296);
-	printf("t %jx\n", 4294967296);
-
-	ft_printf("m %jx\n", -4294967296);
-	printf("t %jx\n", -4294967296);
-
-	ft_printf("m %jx\n", -4294967297);
-	printf("t %jx\n", -4294967297);
-
-	ft_printf("m %ll#x\n", 9223372036854775807);
-	printf("t %ll#x\n", 9223372036854775807);
-
-	ft_printf("m %-010s is a string\n", "this");
-	printf("t %-010s is a string\n", "this");
-
-	ft_printf("m % Z\n", 42);
-	printf("t % Z\n", 42);
-
-	ft_printf("m %5+d\n", 42);
-	printf("t %5+d\n", 42);
-
-	ft_printf("m %5+d\n", -42);
-	printf("t %5+d\n", -42);
-
-	ft_printf("m %-5+d\n", 42);
-	printf("t %-5+d\n", 42);
-
-	ft_printf("m %-0+5d\n", 42);
-	printf("t %-0+5d\n", 42);
-
-	ft_printf("m %-5+d\n", -42);
-	printf("t %-5+d\n", -42);
-
-	ft_printf("m %-0+5d\n", -42);
-	printf("t %-0+5d\n", -42);
-
-	ft_printf("m %jd\n", 9223372036854775807);
-	printf("t %jd\n", 9223372036854775807);
-
-	ft_printf("m %jd\n", -9223372036854775808);
-	printf("t %jd\n", -9223372036854775808);
-
-	ft_printf("m %zd\n", 4294967295);
-	printf("t %zd\n", 4294967295);
-
-	ft_printf("m %zd\n", 4294967296);
-	printf("t %zd\n", 4294967296);
-
-	ft_printf("m %ju\n", 4999999999);
-	printf("t %ju\n", 4999999999);
-
-	ft_printf("m %ju\n", 4294967296);
-	printf("t %ju\n", 4294967296);
-
-	ft_printf("m %hU\n", 4294967296);
-	printf("t %hU\n", 4294967296);
-
-	ft_printf("m %U\n", 4294967296);
-	printf("t %U\n", 4294967296);
-
-	ft_printf("m %zhd\n", 4294967296);
-	printf("t %zhd\n", 4294967296);
-
-	ft_printf("m %jzd\n", 9223372036854775807);
-	printf("t %jzd\n", 9223372036854775807);
-
-	ft_printf("m %jhd\n", 9223372036854775807);
-	printf("t %jhd\n", 9223372036854775807);
-
-	ft_printf("m %lhl\n", 9223372036854775807);
-	printf("t %lhl\n", 9223372036854775807);
-
-	ft_printf("m %lhlz\n", 9223372036854775807);
-	printf("t %lhlz\n", 9223372036854775807);
-
-	ft_printf("m %zj\n", 9223372036854775807);
-	printf("t %zj\n", 9223372036854775807);
-
-	ft_printf("m %lhh\n", 2147483647);
-	printf("t %lhh\n", 2147483647);
-
-	ft_printf("m @main_ftprintf: %####0000 33..1..#00d\n", 256);
-	printf("t @main_ftprintf: %####0000 33..1..#00d\n", 256);
-
-	ft_printf("m @main_ftprintf: %####0000 33..1d\n", 256);
-	printf("t @main_ftprintf: %####0000 33..1d\n", 256);
-
-	ft_printf("m @main_ftprintf: %###-#0000 33...12..#0+0d\n", 256);
-	printf("t @main_ftprintf: %###-#0000 33...12..#0+0d\n", 256);
-*/
-
-/*
-ft_printf("%%");
-ft_printf("\n");
-printf("%%");
-printf("\n");
-*/
-
-// newly failed tests
-
-/*
-ft_printf("%   %\n", "test");
-printf("%   %\n", "test");
-
-ft_printf("%x\n", 4294967296);
-printf("%x\n", 4294967296);
-
-ft_printf("%X\n", 4294967296);
-printf("%X\n", 4294967296);
-
-ft_printf("%010x\n", 542);
-printf("%010x\n", 542);
-
-ft_printf("%.2x\n", 5427);
-printf("%.2x\n", 5427);
-
-ft_printf("%5.2x\n", 5427);
-printf("%5.2x\n", 5427);
-
-ft_printf("%#llx\n", 9223372036854775807);
-printf("%#llx\n", 9223372036854775807);
-
-ft_printf("%#8x\n", 42);
-printf("%#8x\n", 42);
-
-ft_printf("%#-08x\n", 42);
-printf("%#-08x\n", 42);
-
-ft_printf("%.2s is a string\n", "this");
-printf("%.2s is a string\n", "this");
-
-ft_printf("%5.2s is a string\n", "this");
-printf("%5.2s is a string\n", "this");
-
-ft_printf("%.2s is a string\n", "");
-printf("%.2s is a string\n", "");
-
-ft_printf("%-.2s is a string\n", "this");
-printf("%-.2s is a string\n", "this");
-
-ft_printf("%-5.2s is a string\n", "this");
-printf("%-5.2s is a string\n", "this");
-
-ft_printf("%-.2s is a string\n", "");
-printf("%-.2s is a string\n", "");
-
-ft_printf("%.2c\n", NULL);
-printf("%.2c\n", NULL);
-
-ft_printf("@moulitest: %c\n", 0);
-printf("@moulitest: %c\n", 0);
-
-ft_printf("%2c\n", 0);
-printf("%2c\n", 0);
-
-ft_printf("null %c and text\n", 0);
-printf("null %c and text\n", 0);
-
-ft_printf("% c\n", 0);
-printf("% c\n", 0);
-
-ft_printf("%05o\n", 42);
-printf("%05o\n", 42);
-
-ft_printf("%5d\n", 42); //too much space at end
-printf("%5d\n", 42);
-
-ft_printf("%5d\n", -42); //too much space at end
-printf("%5d\n", -42);
-
-ft_printf("%05d\n", -42);
-printf("%05d\n", -42);
-
-ft_printf("%0+5d\n", -42);
-printf("%0+5d\n", -42);
-
-ft_printf("%-5d\n", -42);
-printf("%-5d\n", -42);
-
-ft_printf("%-05d\n", -42);
-printf("%-05d\n", -42);
-
-ft_printf("%hhd\n", 128);
-printf("%hhd\n", 128);
-
-ft_printf("%hhd\n", -129);
-printf("%hhd\n", -129);
-
-ft_printf("%lld\n", -9223372036854775808);
-printf("%lld\n", -9223372036854775808);
-
-ft_printf("%.2d\n", 4242);
-printf("%.2d\n", 4242);
-
-ft_printf("% 10.5d\n", 4242);
-printf("% 10.5d\n", 4242);
-
-ft_printf("%+10.5d\n", 4242);
-printf("%+10.5d\n", 4242);
-
-ft_printf("%-+10.5d\n", 4242);
-printf("%-+10.5d\n", 4242);
-
-ft_printf("@moulitest: %.d %.0d\n", 42, 43);
-printf("@moulitest: %.d %.0d\n", 42, 43);
-*/
-//ft_printf("@moulitest: %5.d %5.0d\n", 0, 0);
-//printf("@moulitest: %5.d %5.0d\n", 0, 0);
-
-/*
-ft_printf("%x", -42);
-printf("\n");
-printf("%x", -42);
-printf("\n");
-
-ft_printf("%X", -42);
-printf("\n");
-printf("%X", -42);
-printf("\n");
-
-ft_printf("%x", 4294967296);
-printf("\n");
-printf("%x", 4294967296);
-printf("\n");
-
-ft_printf("%X", 4294967296);
-printf("\n");
-printf("%X", 4294967296);
-printf("\n");
-
-ft_printf("%10x", 42);
-printf("\n");
-printf("%10x", 42);
-printf("\n");
-
-ft_printf("%-10x", 42);
-printf("\n");
-printf("%-10x", 42);
-printf("\n");
-
-ft_printf("%lx", 4294967296);
-printf("\n");
-printf("%lx", 4294967296);
-printf("\n");
-
-ft_printf("%llX", 4294967296);
-printf("\n");
-ft_printf("%llX", 4294967296);
-printf("\n");
-
-ft_printf("%hx", 4294967296);
-printf("\n");
-ft_printf("%hx", 4294967296);
-printf("\n");
-
-ft_printf("%hhX", 4294967296);
-printf("\n");
-ft_printf("%hhX", 4294967296);
-printf("\n");
-
-ft_printf("%llx", 9223372036854775807);
-printf("\n");
-ft_printf("%llx", 9223372036854775807);
-printf("\n");
-
-ft_printf("%llx", 9223372036854775808);
-printf("\n");
-ft_printf("%llx", 9223372036854775808);
-printf("\n");
-
-ft_printf("%010x", 542);
-printf("\n");
-ft_printf("%010x", 542);
-printf("\n");
-
-ft_printf("%-15x", 542);
-printf("\n");
-ft_printf("%-15x", 542);
-printf("\n");
-
-ft_printf("%5.2x", 5427);
-printf("\n");
-ft_printf("%5.2x", 5427);
-printf("\n");
-
-ft_printf("%#llx", 9223372036854775807);
-printf("\n");
-ft_printf("%#llx", 9223372036854775807);
-printf("\n");
-
-ft_printf("%#x", 0);
-printf("\n");
-ft_printf("%#x", 0);
-printf("\n");
-
-ft_printf("%#X", 42);
-printf("\n");
-ft_printf("%#X", 42);
-printf("\n");
-
-ft_printf("%#8x", 42);
-printf("\n");
-ft_printf("%#8x", 42);
-printf("\n");
-
-ft_printf("%#08x", 42);
-printf("\n");
-ft_printf("%#08x", 42);
-printf("\n");
-
-ft_printf("%#-08x", 42);
-printf("\n");
-ft_printf("%#-08x", 42);
-printf("\n");
-
-ft_printf("@moulitest: %#.x %#.0x", 0, 0);
-printf("\n");
-ft_printf("@moulitest: %#.x %#.0x", 0, 0);
-printf("\n");
-
-ft_printf("@moulitest: %.x %.0x", 0, 0);
-printf("\n");
-ft_printf("@moulitest: %.x %.0x", 0, 0);
-printf("\n");
-
-ft_printf("@moulitest: %5.x %5.0x", 0, 0);
-printf("\n");
-ft_printf("@moulitest: %5.x %5.0x", 0, 0);
-printf("\n");
-*/
-
-
-// coudln't figure out, basically works
-//ft_printf("%x", -42);
-//printf("\n");
-//printf("%x", -42);
-//printf("\n");
-
-// can't figure out, basically works
-//ft_printf("%lx", 4294967296);
-//printf("\n");
-//printf("%lx", 4294967296);
-//printf("\n");
-
-// I don't know how this works, to make it work breaks how normal things work
-//ft_printf("%5.2x", 5427);
-//printf("\n");
-//printf("%5.2x", 5427);
-//printf("\n");
-
-//ft_printf("%-5.2s is a string", "this"); //basically works, not sure what's wrong
-//printf("\n");
-//printf("%-5.2s is a string", "this");
-//printf("\n");
-
-//ft_printf("%5.2s is a string", "this"); //basically works, not sure what's wrong
-//printf("\n");
-//printf("%5.2s is a string", "this");
-//printf("\n");
-
-//ft_printf("%-#6o", 2500); //I have no idea what the exception for this is
-//printf("\n");
-//printf("%-#6o", 2500);
-//printf("\n");
-
-//ft_printf("%5d", 42); //essentially works, no idea what's going on here
-//printf("\n");
-//printf("%5d", 42);
-//printf("\n");
-
-//ft_printf("%u", -1); //essentially works, no idea what's going on here
-//printf("\n");
-//printf("%u", -1);
-//printf("\n");
-
-ft_printf("%hhd", -129);
-printf("\n");
-printf("%hhd", -129);
-printf("\n");
+//	printf("\n*****--- Moulitest Failed Tests ---*****\n");
+
+	//ft_printf("%hho", -42);
+	//printf("\n");
+	//printf("%o, %ho, %hho", -42, -42, -42);
+	//printf("\n");
+
+	// ft_printf("%o, %ho, %hho", -42, -42, -42);
+	// printf("\n");
+	// printf("%o, %ho, %hho", -42, -42, -42);
+	// printf("\n");
+
+	int c = 12345;
+
+	// ft_printf("%x", 42);
+	// printf("\n");
+	// printf("%x", 42);
+	// printf("\n");
+	// ft_printf("%");
+	// printf("\n");
+	// printf("%");
+	// printf("\n");
+
+	// ft_printf("{%f}{%lf}{%Lf}", 1.42, 1.42, 1.42l);
+	// printf("\n");
+	// printf("{%f}{%lf}{%Lf}", 1.42, 1.42, 1.42l);
+	// printf("\n");
+
+	// ft_printf("{%f}{%lf}{%Lf}", -1.42, -1.42, -1.42l);
+	// printf("\n");
+	// ft_printf("{%f}{%lf}{%Lf}", -1.42, -1.42, -1.42l);
+	// printf("\n");
+
+	ft_printf("%5.2x", 5427);
+	printf("\n");
+	printf("%5.2x", 5427);
+	printf("\n");
 
     return(0);
 }

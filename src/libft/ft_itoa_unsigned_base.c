@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_unsigned_base.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mbrave <mbrave@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 12:09:57 by mbrave            #+#    #+#             */
-/*   Updated: 2019/09/13 12:10:01 by mbrave           ###   ########.fr       */
+/*   Updated: 2019/09/25 17:29:21 by mbrave           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa_base(long long n, int base)
+char	*ft_itoa_base(long long n, int base)
 {
 	int				arraycount;
 	char			*str;

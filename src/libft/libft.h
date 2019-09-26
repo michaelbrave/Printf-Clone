@@ -136,7 +136,7 @@ size_t			ft_numofstrings(char const *s, char c);
 */
 char			*ft_itoa_base(long long value, int base);
 int				ft_numplace(unsigned long n, int base);
-char			*ft_itoa_unsigned(unsigned long n, int base);
-char			*ft_itoa_unsigned_base(unsigned long n, int base);
+char			*ft_itoa_unsigned(unsigned long long n, int base);
+int				ft_numplace_unsigned(unsigned long long n, int base);
 
 #endif

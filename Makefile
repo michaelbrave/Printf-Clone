@@ -3,18 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbrave <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: mbrave <mbrave@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/25 14:46:52 by mbrave            #+#    #+#              #
-#    Updated: 2019/06/25 14:46:55 by mbrave           ###   ########.fr        #
+#    Updated: 2019/09/26 04:03:56 by mbrave           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CC = gcc
-
-#-Wall -Wextra -Werror /add back to cflags later
+#-Wall -Wextra -Werror
 CFLAGS = -g -I includes/ -I $(LIBFT)
 
 LDFLAGS = -L. -lftprintf
@@ -33,11 +32,17 @@ SRC = ft_printf.c \
 	do_s.c \
 	do_u.c \
 	do_x.c \
-	do_percent.c \
-	printprint.c \
+	do_f.c \
 	length.c \
-	length2.c \
+	do_percent.c \
+	make_int.c \
+	make_short.c \
+	make_char.c \
+	make_long.c \
+	make_long_long.c \
 	formaters.c \
+	width_precision.c \
+	printprint.c \
 	cleanclean.c \
 
 OBJ = $(patsubst %.c,src/%.o,$(SRC))

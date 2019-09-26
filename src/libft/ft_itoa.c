@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbrave <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mbrave <mbrave@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 17:56:40 by mbrave            #+#    #+#             */
-/*   Updated: 2019/01/28 15:16:55 by mbrave           ###   ########.fr       */
+/*   Updated: 2019/09/25 20:08:11 by mbrave           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,12 @@ char		*ft_itoa(intmax_t n)
 	int				neg;
 	unsigned long	tmp;
 	char			*str;
-	int 			base;
+	int				base;
 
-	neg = 0;
+	neg = ((n < 0) ? 1 : 0);
 	base = 10;
-	if (n < 0)
-	{
+	if (neg == 1)
 		tmp = n * -1;
-		neg = 1;
-	}
 	else
 		tmp = n;
 	arraycount = ft_numplace(tmp, base);
