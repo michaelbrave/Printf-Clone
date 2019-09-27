@@ -13,8 +13,8 @@
 NAME = libftprintf.a
 
 CC = gcc
-#-Wall -Wextra -Werror
-CFLAGS = -g -I includes/ -I $(LIBFT)
+
+CFLAGS = -g -Wall -Wextra -Werror -I includes/ -I $(LIBFT)
 
 LDFLAGS = -L. -lftprintf
 
