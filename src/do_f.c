@@ -18,7 +18,6 @@ char	*make_long_double(t_all *all, char *str, long double holder)
 	long double		afterdot;
 	char			*beforedot;
 	char			*beyonddot;
-	char			*swap;
 
 	holder = (va_arg(all->args, long double));
 	predot = (long long)holder;
